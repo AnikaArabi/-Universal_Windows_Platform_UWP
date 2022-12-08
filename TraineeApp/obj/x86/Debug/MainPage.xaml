@@ -1,0 +1,86 @@
+﻿<Page
+    x:Class="TraineeApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TraineeApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="50, 50, 50, 0">
+        <TextBlock Text="Trainee List" 
+                   FontWeight="SemiBold" 
+                   TextAlignment="Center" 
+                   FontFamily="Mongolian Baiti"
+                   FontSize="28" 
+                   Padding="5 5 5 10"/>
+        <ListView x:ConnectionId='2' x:Name="listTrainees" SelectionMode="Single" 
+                  Height="520"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                                  >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" 
+                        Margin="0"
+                        BorderBrush="LightSkyBlue"
+                        BorderThickness="0,0,0,.5"
+                        Padding="5,5,5,5">
+
+                        <Border BorderBrush="LightGreen" 
+                                Width="120" Height="120"
+                                BorderThickness="1"
+                                CornerRadius="5"                                   
+                               Padding="2">
+                            <Border BorderThickness="1"
+                                    CornerRadius="5"                                   
+                                    Padding="5"
+                
+                           >
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding Picture}" />
+                                </Border.Background>
+                            </Border>
+                        </Border>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock
+                                Text="{Binding Name}"
+                                Margin="15 10 255 5"
+                                FontWeight="Bold"
+                                FontSize="14"
+                                FontFamily="Times New Roman"
+                                />
+                            <TextBlock
+                                Text="{Binding Course}"
+                                Margin="15 5 255 5"
+                                FontFamily="Times New Roman"
+                                FontSize="12"
+                                />
+                            
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="15, 5">
+                                <TextBlock Text="Round: " Margin="0,0,-50, 0" Width="100" FontFamily="Times New Roman" />
+                                <TextBlock 
+                                Text="{Binding Round}"
+                                Margin="0 0 0 0"
+                                FontFamily="Times New Roman"
+                                FontSize="12"
+                                />
+                                
+
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <TextBlock Text="Developed by Anika Arabi" Margin="15 5 55 5" FontFamily="Lucida Sans Unicode"/>
+        <TextBlock Text="Trainee Id : 1267947" Margin="15 5 55 5" FontFamily="Lucida Sans Unicode" />
+    </StackPanel>
+</Page>
+
